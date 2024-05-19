@@ -22,21 +22,13 @@
       </thead>
       <tbody>
       <tr *ngFor="let _p of showProducts">
-        <td *ngIf="isShowImage" class="border p-4 w-1/6"><img class="w-1/3" src="{{_p.imageUrl }}"/></td>
+        <td *ngIf="isShowImage" class="border p-4 w-1/6"><img class="w-1/3" [src]="_p.imageUrl" [title]="_p.productName | uppercase"/></td>
         <td class="border p-4 w-1/6">{{_p.productName }}</td>
         <td class="border p-4 w-1/6">{{_p.productCode }}</td>
         <td class="border p-4 w-1/6">{{_p.releaseDate }}</td>
         <td class="border p-4 w-1/6">{{_p.price }}</td>
         <td class="border p-4 w-1/6">
-          <div class="overflow-hidden" [ngStyle]="{'width.px': _p.starRating * 90 / 5}">
-            <div class="w-[90px]">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
+          <app-star-rate (onClick)="handleShowStar($event)" [starRate]="_p.starRating"/>
         </td>
       </tr>
       </tbody>

@@ -1,15 +1,17 @@
 import {CommonModule, NgForOf} from "@angular/common";
-import {Component} from '@angular/core';
+import {Component, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 import {IProduct} from "../../shared/interfaces/products";
+import {StarRateComponent} from "./star-rate/star-rate.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    StarRateComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -75,8 +77,6 @@ export class HomeComponent {
     this.showProducts = this.products
   }
 
-  // handleShowImage() {
-  // }
   handleFilter() {
     // this.filterString
     if (this.filterString && this.filterString !== "") {
@@ -86,5 +86,9 @@ export class HomeComponent {
       })
     }
 
+
+  }
+  handleShowStar($starRate:number) {
+      return alert($starRate)
   }
 }
