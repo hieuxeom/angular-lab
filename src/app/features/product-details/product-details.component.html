@@ -1,0 +1,23 @@
+<section class="p-8 w-full">
+  <header class="bg-gray-400 p-4">
+    {{productData?.productName}}
+  </header>
+  <main class="p-4 flex gap-4">
+    <div>
+      <ul>
+        <li class="flex gap-4">Name: {{productData?.productName}}</li>
+        <li class="flex gap-4">Code: {{productData?.productCode}}</li>
+        <li class="flex gap-4">Description: {{productData?.description}}</li>
+        <li class="flex gap-4">Availability: {{productData?.releaseDate}}</li>
+        <li class="flex gap-4">Price: ${{productData?.price}}</li>
+        <li class="flex gap-4">5-star Rating: <app-star-rate [starRate]="productData?.starRating || 5"/></li>
+      </ul>
+    </div>
+    <div>
+      <img [src]="productData?.imageUrl" [alt]="productData?.productName">
+    </div>
+  </main>
+  <footer class="bg-gray-400 p-4">
+    <a [routerLink]="['/product-list']">Back</a>
+  </footer>
+</section>
