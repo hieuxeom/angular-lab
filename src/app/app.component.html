@@ -1,27 +1,2 @@
-<section>
-  <h1 class="font-bold text-4xl">Product List</h1>
-  <div>
-    <table class="border border-collapse max-w-6xl">
-      <thead>
-      <tr class="border">
-        <th class="border">Image</th>
-        <th class="border">Product</th>
-        <th class="border">Code</th>
-        <th class="border">Available</th>
-        <th class="border">Price</th>
-        <th class="border">5-star Rating</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let _p of products">
-        <td class="border p-4 w-1/6"><img class="w-1/3" src="{{_p.imageUrl }}"/></td>
-        <td class="border p-4 w-1/6">{{_p.productName }}</td>
-        <td class="border p-4 w-1/6">{{_p.productCode }}</td>
-        <td class="border p-4 w-1/6">{{_p.releaseDate }}</td>
-        <td class="border p-4 w-1/6">{{_p.price }}</td>
-        <td class="border p-4 w-1/6">{{_p.starRating }}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+<app-nav />
+<app-home />
